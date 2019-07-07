@@ -1,7 +1,7 @@
 package com.com.mainacad;
 
-import com.com.mainacad.model.Gender;
-import com.com.mainacad.model.User;
+import com.com.mainacad.model.*;
+import com.com.mainacad.service.CartServise;
 import com.com.mainacad.service.UserGenerationService;
 
 import java.util.Date;
@@ -15,11 +15,16 @@ public class ApplicationRunner {
         Date birthDay = UserGenerationService.getDate(1982, 7, 22);
 
         User user1 = new User("konuk12345", "123456", "Alex", "Ignatenko", birthDay, Gender.MALE);
-        User user2 = new User( Gender.FEMALE);
 
-        System.out.println(user1);
-        System.out.println(user1.equals(user2));
 
-        System.out.println(PROJECT_DIR_PATH);
+        Item item = new Item("25.5", "XXX60", "ItemName");
+
+        Order order = new Order(item, 15);
+
+        Cart cart = new Cart(user1,order, new Date().getTime());
+
+        System.out.println(CartServise.getTotalSum(cart));
+
+
     }
 }
