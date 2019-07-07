@@ -17,13 +17,15 @@ public class ApplicationRunner {
         User user1 = new User("konuk12345", "123456", "Alex", "Ignatenko", birthDay, Gender.MALE);
 
 
-        Item item = new Item("25.5", "XXX60", "ItemName");
+        Item item = new Item("Item Name", "XX60", 25.80);
 
         Order order = new Order(item, 15);
 
-        Cart cart = new Cart(user1,order, new Date().getTime());
+        Cart cart = new Cart(user1, order, new Date().getTime());
 
         System.out.println(CartServise.getTotalSum(cart));
+
+        // System.out.println(25.80 * 15);
 
 
     }

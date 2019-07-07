@@ -2,7 +2,7 @@ package com.com.mainacad.model;
 
 public class Cart {
 
-    private  User user;
+    private User user;
     private Order order;
     private Long time;
 
